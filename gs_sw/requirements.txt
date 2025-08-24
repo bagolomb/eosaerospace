@@ -1,0 +1,4 @@
+pyzmq
+orjson
+fastapi
+uvicorn[standard]

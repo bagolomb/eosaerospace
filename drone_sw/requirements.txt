@@ -1,0 +1,7 @@
+adafruit-extended-bus
+adafruit-circuitpython-lsm303-accel
+adafruit-circuitpython-lsm303dlh-mag
+micropython-ms5611
+pynmea2
+pyserial
+orjson
