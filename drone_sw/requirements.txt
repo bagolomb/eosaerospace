@@ -5,3 +5,6 @@ micropython-ms5611
 pynmea2
 pyserial
 orjson
+websockets
+msgspec
+mavsdk

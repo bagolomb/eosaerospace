@@ -1,4 +1,3 @@
-pyzmq
 orjson
-fastapi
-uvicorn[standard]
+httpx
+msgspec

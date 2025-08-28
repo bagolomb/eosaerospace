@@ -1,0 +1,4 @@
+GS_ADDR = "LAP-MBP-0583.local"
+GS_TLM_ADDR = f"ws://{GS_ADDR}:5555"
+GS_CMD_ADDR = f"ws://{GS_ADDR}:5556"
+DRONE_SERIAL_ADDR = "serial:///dev/ttyUSB0:57600"
