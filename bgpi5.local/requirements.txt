@@ -7,4 +7,3 @@ orjson
 websockets
 msgspec
 mavsdk
-pyserial-asyncio-fast

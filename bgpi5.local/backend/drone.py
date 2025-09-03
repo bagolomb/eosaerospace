@@ -8,7 +8,7 @@ from backend import config
 drone = System()
 
 async def connect():
-    await drone.connect(system_address=config.SIM_ADDR)
+    await drone.connect(system_address=config.DRONE_SERIAL_ADDR)
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():
         if state.is_connected:
@@ -60,5 +60,5 @@ async def offboard_start():
 async def offboard_stop():
     await drone.offboard.stop()
 
-async def rc(x,y,z,r):
-    await drone.manual_control.set_manual_control_input(x,y,r,z)
+async def rc():
+    pass

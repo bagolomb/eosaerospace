@@ -1,3 +1,4 @@
 orjson
-httpx
 msgspec
+websockets
+pyserial-asyncio-fast

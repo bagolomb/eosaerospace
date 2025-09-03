@@ -6,7 +6,6 @@ from backend.drone import hold
 from backend.drone import offboard_start
 from backend.drone import offboard_stop
 
-
 handlers = {}
 
 def cmd(name: str):
@@ -15,32 +14,32 @@ def cmd(name: str):
         return fn
     return wrap
 
-@cmd(0)
-async def arm_cmd():
+@cmd("arm")
+async def _():
     await arm()
 
-@cmd(1)
-async def disarm_cmd():
+@cmd("disarm")
+async def _():
     await disarm()
 
-@cmd(2)
-async def takeoff_cmd():
+@cmd("takeoff")
+async def _():
     await takeoff()
 
-@cmd(3)
-async def land_cmd():
+@cmd("land")
+async def _():
     await land()
 
-@cmd(4)
-async def hold_cmd():
+@cmd("hold")
+async def _():
     await hold()
 
-@cmd(5)
-async def offboard_start_cmd():
+@cmd("offboard_start")
+async def _():
     await offboard_start()
 
-@cmd(6)
-async def offboard_stop_cmd():
+@cmd("offboard_stop")
+async def _():
     await offboard_stop()
 
 

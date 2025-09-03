@@ -1,4 +1,4 @@
-GS_ADDR = "LAP-MBP-0583.local"
-GS_TLM_ADDR = f"ws://{GS_ADDR}:5555"
-GS_CMD_ADDR = f"ws://{GS_ADDR}:5556"
-DRONE_SERIAL_ADDR = "serial:///dev/ttyUSB0:57600"
+TLM_HZ = 20
+GS_HOST = "192.168.0.247"
+GS_SERIAL_ADDR = f"socket://{GS_HOST}:5555"
+SIM_ADDR = "udpout://192.168.0.88:14540"

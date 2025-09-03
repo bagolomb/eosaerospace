@@ -2,7 +2,6 @@ import asyncio
 from backend.comms.server import starter as comms_starter
 from backend import drone
 
-
 async def main():
     # Step 1: Connect to drone
     await drone.connect()
