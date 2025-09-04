@@ -45,13 +45,11 @@
     </div>
     <div class="w-full p-2 flex flex-row justify-evenly">
         <Button onclick={() => {
-                sendCmd("offboard_start");
                 rc_control.rc_control = true;
             }}>
             Start RC
         </Button>
         <Button onclick={() => {
-                sendCmd("offboard_stop");
                 rc_control.rc_control = false;
             }}>
             End RC
