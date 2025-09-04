@@ -1,10 +1,13 @@
 # start.py
 import asyncio
 import sys
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 FRONTEND_DIR = ROOT / "frontend"
+
+COMMON_ENV = {**os.environ, "FORCE_COLOR": "1"}
 
 async def start_svelte():
     proc = await asyncio.create_subprocess_exec(
@@ -19,16 +22,20 @@ async def start_svelte():
         print("[svelte]", line.decode().rstrip())
 
 async def start_backend():
+    env = {**COMMON_ENV, "PYTHONUNBUFFERED": "1"}
     proc = await asyncio.create_subprocess_exec(
-        sys.executable, "-m", "backend.app",
+        sys.executable, "-u", "-m", "backend.app",   # <- -u here
         cwd=str(ROOT),
+        env=env,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.STDOUT,
     )
-    print("[backend] started")
+    print("[backend] started", flush=True)
+    while True:
+        line = await proc.stdout.readline()
+        if not line: break
+        print("[backend]", line.decode(errors="replace").rstrip(), flush=True)
 
-    async for line in proc.stdout:
-        print("[backend]", line.decode().rstrip())
 
 async def main():
     # run both processes concurrently

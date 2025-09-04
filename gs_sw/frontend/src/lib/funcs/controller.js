@@ -26,10 +26,10 @@ export function getRCInput() {
   const rx = gp.axes[2];
   const ry = gp.axes[3];
 
-  const x = dz(-ry);   // forward/back (invert so up on stick = +forward)
-  const y = dz( rx);   // left/right
-  const z = dz(-ly);   // up/down (invert so up on stick = +up)
-  const r = dz( lx);   // yaw
+  let x = dz(-ry);   // forward/back (invert so up on stick = +forward)
+  let y = dz( rx);   // left/right
+  let z = dz(-ly);   // up/down (invert so up on stick = +up)
+  let r = dz( lx);   // yaw
 
   // Convert to wire format expected by bridge: int16 roll, pitch, yaw, throttle, uint16 flags
   // Convention: roll = left/right, pitch = forward/back, throttle = up/down

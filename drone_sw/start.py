@@ -9,6 +9,7 @@ async def start_backend():
     proc = await asyncio.create_subprocess_exec(
         sys.executable, "-m", "backend.app",
         cwd=str(ROOT),
+        
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.STDOUT,
     )

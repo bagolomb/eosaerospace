@@ -1,4 +1,5 @@
 TLM_HZ = 20
-GS_HOST = "192.168.0.247"
+GS_HOST = "0.0.0.0"
+
 GS_SERIAL_ADDR = f"socket://{GS_HOST}:5555"
 SIM_ADDR = "udpout://192.168.0.88:14540"
